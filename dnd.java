@@ -16,9 +16,9 @@ public class dnd {
         System.out.println("Hello! Welcome to DND. How would you like to sort your characters?");
         System.out.println("You can sort by Strength, Wisdom, Dexterity, Constitution, Charisma, and Intelligence");
         String input = kbReader.nextLine();
+        sortCharacters(characterList, input.toLowerCase());
         while(true) {
-            sortCharacters(characterList, input.toLowerCase());
-
+            setCharacters(characterList);
             System.out.println("Would you like to sort something else?");
             System.out.println("Yes or No");
             input = kbReader.nextLine().toLowerCase();
@@ -26,10 +26,12 @@ public class dnd {
             if (input.equals("yes")) {
                 System.out.println("You can sort by Strength, Wisdom, Dexterity, Constitution, Charisma, and Intelligence");
                 input = kbReader.nextLine();
+                sortCharacters(characterList, input.toLowerCase());
             } else if (input.equals("no")) {
                 break;
             } else if (input.equals("recursion!")) {
                 System.out.println("I was stuck on morseCode for almost 2 months");
+                break;
             } else {
                 break;
             }
